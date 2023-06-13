@@ -27,11 +27,11 @@ To decompress the file, the reverse steps are followed:
 
 1. **Read the compressed file**: Read the compressed file, including the compressed bitstream and the stored Huffman tree or encoding table.
 
-2.**Reconstruct the Huffman tree**: Use the stored Huffman tree or encoding table to reconstruct the original Huffman tree structure.
-For each binary code: 
- A left edge is created for 0, and a right edge is created for 1. 
- Finally, a leaf node is formed and the character is stored within it.
- This is repeated for all characters and binary codes. The Huffman tree is thus recreated in this manner.
+2. **Reconstruct the Huffman tree**: Use the stored Huffman tree or encoding table to reconstruct the original Huffman tree structure.
+  * For each binary code:
+     * A left edge is created for 0, and a right edge is created for 1. 
+     * Finally, a leaf node is formed and the character is stored within it.
+     * This is repeated for all characters and binary codes. The Huffman tree is thus recreated in this manner.
 
 3. **Decode the compressed bitstream**: Start from the root of the reconstructed Huffman tree and traverse down the tree based on the bits in the compressed bitstream. When a leaf node is reached, output the corresponding character and reset to the root.
 
